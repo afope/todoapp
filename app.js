@@ -2,9 +2,23 @@ var app = angular.module('Todo', []);
 app.controller('TodoCtrl', function($scope) {
   $scope.message = 'Angular is pretty cool.';
   $scope.todos = [
-    'Learn Sketch',
-    'Look at Dribble and feel inferior',
-    'Actually learn to use pen tool'
+    {
+      text: 'Email Ire',
+      isComplete: false
+    },
+    {
+      text: 'Go Swimming',
+      isComplete: false
+    },
+    {
+      text: 'Program or be programmed',
+      isComplete: false
+    },
+    {
+      text: 'Submit Stories',
+      isComplete: false
+    }
+
   ];
   $scope.done = function(todo) {
     var indexOf = $scope.todos.indexOf(todo);
