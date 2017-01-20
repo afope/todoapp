@@ -20,17 +20,27 @@ app.controller('TodoCtrl', function($scope) {
     }
 
   ];
+
   $scope.done = function(todo) {
       todo.isComplete = true;
 };
+
 $scope.undone = function(todo) {
     todo.isComplete = false;
 };
+
   $scope.add = function(e) {
     if (e.which && e.which === 13) {
-      $scope.todos.push($scope.newTodo);
-      $scope.newTodo = '';
-    }
+      var text = document.getElementById('tod').value;
+      var todo = {
+        text: $scope.todoText = text,
+        isComplete: false
+      };
+      $scope.todos.push(todo);
+      $scope.todoText ='';
+  }
+  //$scope.add = add;
   };
+
 
 });
