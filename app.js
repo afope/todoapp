@@ -31,9 +31,8 @@ $scope.undone = function(todo) {
 
   $scope.add = function(e) {
     if (e.which && e.which === 13) {
-      var text = document.getElementById('tod').value;
       var todo = {
-        text: $scope.todoText = text,
+        text: $scope.todoText,
         isComplete: false
       };
       $scope.todos.push(todo);
