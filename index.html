@@ -12,13 +12,17 @@
       <li>
        <span>{{ todo.text }}</span>
         <button class="bt bt-achieve" ng-click="done(todo)">Done</button>
+        <button class="bt bt-achieve" ng-click="done(todo)">Complete</button>
+        <button class="bt bt-achieve" ng-click="undone(todo)">Incomplete</button>
+
+
       </li>
     </ul>
 
     <ul class="add-todo">
         <li>
-          <input type="text" class="txt" placeholder="New Todo"
-             ng-model="newTodo" ng-keyup="add($event)" />
+          <input id="tod" type="text" class="txt" placeholder="New Todo"
+             ng-model="todoText" ng-keyup="add($event)" />
         </li>
       </ul>
  </div>
