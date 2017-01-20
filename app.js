@@ -21,11 +21,11 @@ app.controller('TodoCtrl', function($scope) {
 
   ];
   $scope.done = function(todo) {
-    var indexOf = $scope.todos.indexOf(todo);
-    if (indexOf !== -1) {
-      $scope.todos.splice(indexOf, 1);
-    }
-  };
+      todo.isComplete = true;
+};
+$scope.undone = function(todo) {
+    todo.isComplete = false;
+};
   $scope.add = function(e) {
     if (e.which && e.which === 13) {
       $scope.todos.push($scope.newTodo);
