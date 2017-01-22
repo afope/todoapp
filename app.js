@@ -22,11 +22,13 @@ app.controller('TodoCtrl', function($scope) {
   ];
 
   $scope.done = function(todo) {
-      todo.isComplete = true;
+    console.log("complete");
+    todo.isComplete = true;
 };
 
 $scope.undone = function(todo) {
     todo.isComplete = false;
+    console.log("incomplete");
 };
 
   $scope.add = function(e) {
@@ -40,6 +42,10 @@ $scope.undone = function(todo) {
   }
   //$scope.add = add;
   };
+
+  $scope.hideMe = function(todo){
+     todo.hide=true;
+   }
 
 
 });
