@@ -13,24 +13,30 @@
     <h2>Todo</h2>
 
     <h3>Complete Tasks</h3>
-    <ul class="todo-list" ng-repeat="todo in todos track by $index" ng-hide="todo.hide">
+    <ul class="todo-list" ng-repeat="todo in todos track by $index" ng-show="!todo.isComplete">
       <li>
        <span>{{ todo.text }}</span>
-        <button ng-if="!todo.isComplete" class="bt bt-achieve" ng-click="hideMe(todo)" id="complete">Incomplete</button>
+        <button ng-if="!todo.isComplete" class="bt bt-achieve" ng-click="done(todo)" id="complete">Complete</button>
         <button ng-if="todo.isComplete" class="bt bt-achieve" ng-click="undone(todo)" id="incomplete" >Incomplete</button>
 
       </li>
       </ul>
+      <ul class="add-todo">
+          <li>
+
+         <input id="tod" type="text" class="txt" placeholder="New Todo"
+           ng-model="todoText" ng-keyup="add($event)" />
+          </li>
+        </ul>
 
       <h3>Incomplete Tasks</h3>
-        <ul class="todo-list" ng-repeat="todo in todos track by $index" ng-show="todo.hide" >
+        <ul class="todo-list" ng-repeat="todo in todos track by $index" ng-show="todo.isComplete" >
      <li>
        <span>{{ todo.text }}</span>
-        <button ng-if="!todo.isComplete" class="bt bt-achieve" ng-click="hideMe(todo)" id="complete">Complete</button>
+        <button ng-if="!todo.isComplete" class="bt bt-achieve" ng-click="done(todo)" id="complete">Complete</button>
         <button ng-if="todo.isComplete" class="bt bt-achieve" ng-click="undone(todo)" id="incomplete" >Incomplete</button>
      </li>
 
-        </ul>
 
  </div>
 

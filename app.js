@@ -22,8 +22,8 @@ app.controller('TodoCtrl', function($scope) {
   ];
 
   $scope.done = function(todo) {
-    console.log("complete");
     todo.isComplete = true;
+    console.log("complete");
 };
 
 $scope.undone = function(todo) {
@@ -43,9 +43,7 @@ $scope.undone = function(todo) {
   //$scope.add = add;
   };
 
-  $scope.hideMe = function(todo){
-     todo.hide=true;
-   }
+  
 
 
 });
