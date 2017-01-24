@@ -16,8 +16,7 @@
     <ul class="todo-list" ng-repeat="todo in todos track by $index" ng-show="!todo.isComplete">
       <li>
        <span>{{ todo.text }}</span>
-        <button ng-if="!todo.isComplete" class="bt bt-achieve" ng-click="done(todo)" id="complete">Complete</button>
-        <button ng-if="todo.isComplete" class="bt bt-achieve" ng-click="undone(todo)" id="incomplete" >Incomplete</button>
+        <button ng-if="!todo.isComplete" class="bt bt-achieve" ng-click="done(todo)" id="complete">Incomplete</button>
 
       </li>
       </ul>
@@ -33,8 +32,7 @@
         <ul class="todo-list" ng-repeat="todo in todos track by $index" ng-show="todo.isComplete" >
      <li>
        <span>{{ todo.text }}</span>
-        <button ng-if="!todo.isComplete" class="bt bt-achieve" ng-click="done(todo)" id="complete">Complete</button>
-        <button ng-if="todo.isComplete" class="bt bt-achieve" ng-click="undone(todo)" id="incomplete" >Incomplete</button>
+        <button ng-if="todo.isComplete" class="bt bt-achieve" ng-click="undone(todo)" id="complete" >Complete</button>
      </li>
 
 
