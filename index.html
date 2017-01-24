@@ -12,11 +12,11 @@
     <div class="page-container" ng-controller="TodoCtrl">
     <h2>Todo</h2>
 
-    <h3>Complete Tasks</h3>
+    <h3>Incomplete Tasks</h3>
     <ul class="todo-list" ng-repeat="todo in todos track by $index" ng-show="!todo.isComplete">
       <li>
        <span>{{ todo.text }}</span>
-        <button ng-if="!todo.isComplete" class="bt bt-achieve" ng-click="done(todo)" id="complete">Incomplete</button>
+        <button ng-if="!todo.isComplete" class="bt bt-achieve" ng-click="done(todo)" id="complete">Complete</button>
 
       </li>
       </ul>
@@ -28,11 +28,11 @@
           </li>
         </ul>
 
-      <h3>Incomplete Tasks</h3>
+      <h3>Complete Tasks</h3>
         <ul class="todo-list" ng-repeat="todo in todos track by $index" ng-show="todo.isComplete" >
      <li>
        <span>{{ todo.text }}</span>
-        <button ng-if="todo.isComplete" class="bt bt-achieve" ng-click="undone(todo)" id="complete" >Complete</button>
+        <button ng-if="todo.isComplete" class="bt bt-achieve" ng-click="undone(todo)" id="complete" >Incomplete</button>
      </li>
 
 
